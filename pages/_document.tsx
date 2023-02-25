@@ -27,7 +27,7 @@ export default function Document() {
         )}
         <meta
           name="description"
-          content="The application interface for Zeitgeist Prediction Markets. Built on Polkadot, Zeitgeist is the leader in decentralized prediction markets."
+          content="The application interface for Zulu Prediction Markets. Built on Polkadot, Zulu is the leader in decentralized prediction markets."
         />
         <link
           rel="apple-touch-icon"
@@ -49,7 +49,7 @@ export default function Document() {
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
 
-        <meta key="twitter:site" name="twitter:site" content="@ZeitgeistPM" />
+        <meta key="twitter:site" name="twitter:site" content="@ZuluPM" />
         <meta
           key="twitter:card"
           name="twitter:card"
@@ -58,7 +58,7 @@ export default function Document() {
         <meta
           key="twitter:creator"
           name="twitter:creator"
-          content="@ZeitgeistPM"
+          content="@ZuluPM"
         />
       </Head>
       <body className="overflow-x-hidden max-w-full">

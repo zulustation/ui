@@ -1,6 +1,6 @@
 // run with the command  e.g `ts-node -s --transpile-only --esm scripts/mts/getSpotPrices.mts 65 --at 1944439`
 import { Command } from "commander";
-import { ZeitgeistIpfs, createRpcContext } from "@zeitgeistpm/sdk-next";
+import { ZuluIpfs, createRpcContext } from "@zulustation/sdk-next";
 import Decimal from "decimal.js";
 
 const program = new Command();
@@ -17,8 +17,8 @@ program
 
 async function getSdk() {
   return createRpcContext({
-    provider: "wss://zeitgeist.api.onfinality.io/public-ws",
-    storage: ZeitgeistIpfs(),
+    provider: "wss://zulu.api.onfinality.io/public-ws",
+    storage: ZuluIpfs(),
   });
 }
 
@@ -71,10 +71,10 @@ async function getSpotPrices(marketId: number, block?: string) {
 
   const spotPrices = new Map<string, Decimal>();
   const weights: { assetId: string; len: any }[] = Object.entries(pool.weights)
-    .filter((weight: any) => weight[0].toLowerCase() !== "ztg")
+    .filter((weight: any) => weight[0].toLowerCase() !== "zul")
     .map((weight: any) => ({ assetId: weight[0], len: weight[1] }));
 
-  const baseWeight = pool.weights["Ztg"];
+  const baseWeight = pool.weights["Zul"];
 
   const assets = weights.map((weight) => JSON.parse(weight.assetId));
 

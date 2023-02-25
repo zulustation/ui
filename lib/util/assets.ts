@@ -1,9 +1,9 @@
 import {
   parseAssetId,
   getIndexOf,
-  ZTG,
+  ZUL,
   MarketOutcomeAssetId,
-} from "@zeitgeistpm/sdk-next";
+} from "@zulustation/sdk-next";
 import Decimal from "decimal.js";
 
 export const getCurrentPrediction = (
@@ -53,7 +53,7 @@ export const getCurrentPrediction = (
     const percentage = Math.round((averagePricePrediction / totalPrice) * 100);
 
     return {
-      name: new Decimal(averagePricePrediction).div(ZTG).toString(),
+      name: new Decimal(averagePricePrediction).div(ZUL).toString(),
       price: averagePricePrediction,
       percentage,
     };

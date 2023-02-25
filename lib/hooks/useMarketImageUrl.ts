@@ -14,7 +14,7 @@ const useMarketImageUrl = (image?: MarketImageString) => {
     if (isMarketImageBase64Encoded(image)) {
       return setImageUrl(image);
     }
-    const ipfsUrl = `https://ipfs-gateway.zeitgeist.pm/ipfs/${image}`;
+    const ipfsUrl = `https://ipfs-gateway.zulu.pm/ipfs/${image}`;
     return setImageUrl(ipfsUrl);
   }, [image]);
 

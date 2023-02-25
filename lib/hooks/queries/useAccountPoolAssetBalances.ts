@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import { Context, isIndexedData, isRpcSdk, Pool } from "@zeitgeistpm/sdk-next";
+import { Context, isIndexedData, isRpcSdk, Pool } from "@zulustation/sdk-next";
 import { getApiAtBlock } from "lib/util/get-api-at";
 import { useSdkv2 } from "../useSdkv2";
-import { FullPoolFragment } from "@zeitgeistpm/indexer";
+import { FullPoolFragment } from "@zulustation/indexer";
 
 export const accountPoolAssetBalancesRootKey = "account-pool-asset-balances";
 
@@ -19,7 +19,7 @@ export const useAccountPoolAssetBalances = (
       if (isRpcSdk(sdk)) {
         const assets = isIndexedData(pool)
           ? pool.weights
-              .filter((weight) => weight.assetId !== "Ztg")
+              .filter((weight) => weight.assetId !== "Zul")
               .map((weight) => JSON.parse(weight.assetId))
           : pool.assets;
 

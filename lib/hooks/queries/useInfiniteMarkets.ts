@@ -4,8 +4,8 @@ import {
   IndexerContext,
   isIndexedSdk,
   Market,
-} from "@zeitgeistpm/sdk-next";
-import { MarketOrderByInput } from "@zeitgeistpm/indexer";
+} from "@zulustation/sdk-next";
+import { MarketOrderByInput } from "@zulustation/indexer";
 import { getOutcomesForMarkets } from "lib/gql/markets-list/outcomes-for-markets";
 import objectHash from "object-hash";
 import { useStore } from "lib/stores/Store";
@@ -18,7 +18,7 @@ import {
 import { marketsRootQuery } from "./useMarket";
 import { useSdkv2 } from "../useSdkv2";
 import { MarketOutcomes } from "lib/types/markets";
-import { MarketStatus } from "@zeitgeistpm/indexer";
+import { MarketStatus } from "@zulustation/indexer";
 
 export const rootKey = "markets-filtered";
 

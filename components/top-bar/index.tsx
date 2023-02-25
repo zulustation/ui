@@ -3,7 +3,7 @@ import React, { useEffect, useState, FC } from "react";
 
 import AccountButton from "../account/AccountButton";
 import MarketSearch from "./MarketSearch";
-import Logo from "../icons/ZeitgeistIcon";
+import Logo from "../icons/ZuluIcon";
 import { Menu, X } from "react-feather";
 import { useStore } from "lib/stores/Store";
 
@@ -18,11 +18,11 @@ const MobileTopBar: FC<{ navbar: boolean }> = observer(({ navbar }) => {
     <div className="flex items-center w-full">
       <Logo dark={navbar} />
       <h1
-        className={`text-ztg-19-120 ml-ztg-10 font-bold font-kanit ${
+        className={`text-zul-19-120 ml-zul-10 font-bold font-kanit ${
           navbar ? "text-black" : "text-white"
         }`}
       >
-        Zeitgeist
+        Zulu
       </h1>
       {store.showMobileMenu ? (
         <X
@@ -60,7 +60,7 @@ const TopBar = observer(() => {
   return (
     //inline style is temporary until we make right drawer a modal
     <div
-      className={`flex w-full py-ztg-18 bg-transparent fixed z-ztg-10`}
+      className={`flex w-full py-zul-18 bg-transparent fixed z-zul-10`}
       style={{
         backgroundColor: `${navbar ? "white" : "transparent"}`,
       }}

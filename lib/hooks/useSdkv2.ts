@@ -4,9 +4,9 @@ import {
   createStorage,
   MarketMetadata,
   Sdk,
-  ZeitgeistIpfs,
-} from "@zeitgeistpm/sdk-next";
-import { IPFS } from "@zeitgeistpm/web3.storage";
+  ZuluIpfs,
+} from "@zulustation/sdk-next";
+import { IPFS } from "@zulustation/web3.storage";
 import { SupportedParachain } from "lib/types";
 import { endpoints } from "lib/constants";
 import Store, { useStore } from "lib/stores/Store";
@@ -104,7 +104,7 @@ const init = memoize(
       return create$({
         provider: [store.userStore.endpoint, ...backupRPCs],
         indexer: store.userStore.gqlEndpoint,
-        storage: ZeitgeistIpfs(),
+        storage: ZuluIpfs(),
       });
     }
   },

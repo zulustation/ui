@@ -1,7 +1,7 @@
 import { useUserStore } from "lib/stores/UserStore";
 import { observer } from "mobx-react";
 
-const ZeitgeistIcon = observer(({ width = 35, height = 35, dark = false }) => {
+const ZuluIcon = observer(({ width = 35, height = 35, dark = false }) => {
   const { theme } = useUserStore();
 
   return (
@@ -20,4 +20,4 @@ const ZeitgeistIcon = observer(({ width = 35, height = 35, dark = false }) => {
   );
 });
 
-export default ZeitgeistIcon;
+export default ZuluIcon;

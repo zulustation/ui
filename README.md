@@ -1,4 +1,4 @@
-# Zeitgeist prediction markets
+# Zulu prediction markets
 
 ## Install dependencies
 

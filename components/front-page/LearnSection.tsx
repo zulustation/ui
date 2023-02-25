@@ -28,13 +28,13 @@ const LearnCard = ({
       className={`w-full rounded-[10px] p-[15px] pr-[20px] ${classes} `}
     >
       <a href={link} target="_blank" rel="noopener noreferrer">
-        <span className="bg-white p-[6px] rounded-[50px] w-fit text-ztg-12-120">
+        <span className="bg-white p-[6px] rounded-[50px] w-fit text-zul-12-120">
           {tag}
         </span>
         <div className="flex items-start justify-between gap-[30px]">
           <div>
-            <h6 className="font-semibold text-ztg-16-150 mt-[8px]">{title}</h6>
-            <p className="hidden md:block text-ztg-14-150">{description}</p>
+            <h6 className="font-semibold text-zul-16-150 mt-[8px]">{title}</h6>
+            <p className="hidden md:block text-zul-14-150">{description}</p>
           </div>
           <Image
             src={img}
@@ -56,23 +56,23 @@ const LearnSection = () => {
         tag="Trade"
         title="Prediction Markets"
         description="Make money from what you believe"
-        link="https://docs.zeitgeist.pm/docs/learn/prediction-markets"
+        link="https://docs.zulu.pm/docs/learn/prediction-markets"
         classes="bg-tropical-blue"
         img="/learn/learn-1.png"
       />
       <LearnCard
         tag="Earn"
         title="Liquidity Pools"
-        description="Earn ZTG by providing Liquidity"
-        link="https://docs.zeitgeist.pm/docs/learn/liquidity"
+        description="Earn ZUL by providing Liquidity"
+        link="https://docs.zulu.pm/docs/learn/liquidity"
         classes="bg-link-water"
         img="/learn/learn-2.png"
       />
       <LearnCard
         tag="Learn"
         title="Get Started"
-        description="Learn all about the Zeitgeist ecosystem in our Docs"
-        link="https://docs.zeitgeist.pm/docs/getting-started"
+        description="Learn all about the Zulu ecosystem in our Docs"
+        link="https://docs.zulu.pm/docs/getting-started"
         classes="bg-mystic col-span-2 sm:col-span-1 min-h-[84px]"
         img="/learn/learn-3.png"
       />

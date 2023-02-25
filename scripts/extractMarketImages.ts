@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 
 const client = new GraphQLClient(
-  "https://processor.rpc-0.zeitgeist.pm/graphql",
+  "https://processor.rpc-0.zulu.pm/graphql",
 );
 
 const allMarketsQuery = gql`

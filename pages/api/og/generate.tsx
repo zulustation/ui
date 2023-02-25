@@ -30,7 +30,7 @@ export default async function GenerateOgImage(request: NextRequest) {
     ? new URL("../../../public/icons/default-market.png", import.meta.url).href
     : isMarketImageBase64Encoded(market.img)
     ? market.img
-    : `https://ipfs-gateway.zeitgeist.pm/ipfs/${market.img}`;
+    : `https://ipfs-gateway.zulu.pm/ipfs/${market.img}`;
 
   const isTwitter = searchParams.has("twitter");
 
@@ -127,7 +127,7 @@ export default async function GenerateOgImage(request: NextRequest) {
               style={{ color: "#ABC1F9" }}
             >
               {volume}
-              {" ZTG"}
+              {" ZUL"}
             </div>
           </div>
         </div>
@@ -140,7 +140,7 @@ export default async function GenerateOgImage(request: NextRequest) {
           transformOrigin: "bottom right",
         }}
         src={
-          new URL("../../../public/og/zeitgeist_badge.png", import.meta.url)
+          new URL("../../../public/og/zulu_badge.png", import.meta.url)
             .href
         }
       />

@@ -1,4 +1,4 @@
-import { IndexerContext, Market } from "@zeitgeistpm/sdk-next";
+import { IndexerContext, Market } from "@zulustation/sdk-next";
 import { MarketPageIndexedData } from "lib/gql/markets";
 import { OgHead } from "./OgHead";
 
@@ -13,7 +13,7 @@ export const MarketMeta = ({
         title={market.question}
         description={
           market.description ??
-          "The application interface for Zeitgeist Prediction Markets. Built on Polkadot, Zeitgeist is the leader in decentralized prediction markets."
+          "The application interface for Zulu Prediction Markets. Built on Polkadot, Zulu is the leader in decentralized prediction markets."
         }
         image={
           new URL(

@@ -10,7 +10,7 @@ import { WalletError } from "../errors/BaseWalletError";
 import { AuthError } from "../errors/AuthError";
 import { SubscriptionFn, Wallet } from "../types";
 
-const DAPP_NAME = "zeitgeist";
+const DAPP_NAME = "zulu";
 
 export class BaseDotsamaWallet implements Wallet {
   extensionName = "";

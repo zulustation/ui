@@ -8,7 +8,7 @@ export const defaultTags = [
   "India",
   "Crypto",
   "Dotsama",
-  "Zeitgeist",
+  "Zulu",
   "Technology",
   "Science",
   "Pandemics",

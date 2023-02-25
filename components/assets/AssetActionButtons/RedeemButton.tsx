@@ -6,10 +6,10 @@ import {
   isRpcSdk,
   Market,
   MarketId,
-} from "@zeitgeistpm/sdk-next";
-import * as AE from "@zeitgeistpm/utility/dist/aeither";
+} from "@zulustation/sdk-next";
+import * as AE from "@zulustation/utility/dist/aeither";
 import Decimal from "decimal.js";
-import { ZTG } from "lib/constants";
+import { ZUL } from "lib/constants";
 import {
   AccountAssetIdPair,
   useAccountAssetBalances,
@@ -77,7 +77,7 @@ export const RedeemButtonByAssetId = observer(
           ?.data.balance;
         if (!balance) return new Decimal(0);
 
-        return new Decimal(balance?.free.toString()).div(ZTG);
+        return new Decimal(balance?.free.toString()).div(ZUL);
       } else {
         const shortBalance = assetBalances?.get(signer?.address, {
           ScalarOutcome: [market.marketId as MarketId, "Short"],
@@ -97,9 +97,9 @@ export const RedeemButtonByAssetId = observer(
         return calcScalarWinnings(
           lowerBound,
           upperBound,
-          new Decimal(resolvedNumber).div(ZTG),
-          new Decimal(shortBalance.free.toNumber()).div(ZTG),
-          new Decimal(longBalance.free.toNumber()).div(ZTG),
+          new Decimal(resolvedNumber).div(ZUL),
+          new Decimal(shortBalance.free.toNumber()).div(ZUL),
+          new Decimal(longBalance.free.toNumber()).div(ZUL),
         );
       }
     }, [market, assetId, ...assetBalances.query.map((q) => q.data)]);
@@ -129,7 +129,7 @@ export const RedeemButtonByValue = observer(
         notificationStore,
         successCallback: async () => {
           notificationStore.pushNotification(
-            `Redeemed ${value.toFixed(2)} ZTG`,
+            `Redeemed ${value.toFixed(2)} ZUL`,
             {
               type: "Success",
             },
@@ -162,7 +162,7 @@ export const RedeemButtonByValue = observer(
         ) : (
           <button
             onClick={handleClick}
-            className={`text-mariner font-semibold text-ztg-14-120 ${
+            className={`text-mariner font-semibold text-zul-14-120 ${
               isRedeeming && "animate-pulse"
             }`}
             disabled={isRedeeming}

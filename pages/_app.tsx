@@ -12,7 +12,7 @@ import { useRouter } from "next/router";
 import React, { Suspense, useEffect, useState } from "react";
 import { hotjar } from "react-hotjar";
 
-import { AvatarContext } from "@zeitgeistpm/avatara-react";
+import { AvatarContext } from "@zulustation/avatara-react";
 import { ModalStoreContext } from "components/context/ModalStoreContext";
 import { StoreProvider } from "components/context/StoreContext";
 import MobileMenu from "components/menu/MobileMenu";
@@ -96,7 +96,7 @@ const MyApp = observer(({ Component, pageProps }) => {
               <ModalContainer>{modalStore.modal}</ModalContainer>
             )}
             <Head>
-              <title>Zeitgeist - Prediction Markets</title>
+              <title>Zulu - Prediction Markets</title>
             </Head>
             <DefaultLayout>
               <AnimatePresence>
