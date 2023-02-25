@@ -22,7 +22,7 @@ import {
 
 import { MarketStoreContext } from "components/context/MarketStoreContext";
 
-import { ZTG } from "../constants";
+import { ZUL } from "../constants";
 import { MarketOutcome } from "../types";
 import Store from "./Store";
 import { calcSpotPrice } from "lib/math";
@@ -178,15 +178,15 @@ class MarketStore {
     if (this.market.marketType.isScalar) {
       const bounds = this.market.marketType.asScalar;
       return [
-        Number(bounds[0].toString()) / ZTG,
-        Number(bounds[1].toString()) / ZTG,
+        Number(bounds[0].toString()) / ZUL,
+        Number(bounds[1].toString()) / ZUL,
       ];
       //@ts-ignore - marketType is inconsistent
     } else if (this.market.marketType.scalar) {
       //@ts-ignore
       const bounds = this.market.marketType.scalar;
 
-      return [Number(bounds[0]) / ZTG, Number(bounds[1]) / ZTG];
+      return [Number(bounds[0]) / ZUL, Number(bounds[1]) / ZUL];
     } else {
       return null;
     }
@@ -321,12 +321,12 @@ class MarketStore {
       return [];
     }
     const weights = this.pool?.weights.toJSON() ?? null;
-    const ztgAsset = this.assets && this.assets.slice(-1)[0].toJSON();
-    const ztgWeight = weights && weights["Ztg"];
-    const ztg = {
-      metadata: "ztg",
-      asset: ztgAsset,
-      weight: ztgWeight,
+    const zulAsset = this.assets && this.assets.slice(-1)[0].toJSON();
+    const zulWeight = weights && weights["Zul"];
+    const zul = {
+      metadata: "zul",
+      asset: zulAsset,
+      weight: zulWeight,
     } as any;
     if (this.is("Resolved") && this.type === "categorical") {
       const asset = this.assets[0].toJSON();
@@ -338,7 +338,7 @@ class MarketStore {
           asset,
           weight,
         },
-        ztg,
+        zul,
       ];
     } else {
       return [
@@ -351,7 +351,7 @@ class MarketStore {
             weight,
           };
         }),
-        ztg,
+        zul,
       ];
     }
   }
@@ -398,24 +398,24 @@ class MarketStore {
       this.createAssetFromAssetId(outAsset),
     );
 
-    return new Decimal(price.toNumber()).div(ZTG);
+    return new Decimal(price.toNumber()).div(ZUL);
   }
 
-  async assetPriceInZTG(assetId: AssetId): Promise<Decimal | null> {
+  async assetPriceInZUL(assetId: AssetId): Promise<Decimal | null> {
     if (!this.poolExists) {
       return null;
     }
-    const [assetBalance, ztgBalance] = await Promise.all([
+    const [assetBalance, zulBalance] = await Promise.all([
       this.store.getPoolBalance(this.pool, assetId),
       this.store.getPoolBalance(this.pool, {
-        ztg: null,
+        zul: null,
       }),
     ]);
     const assetWeight = this.getAssetWeight(assetId);
     const baseWeight = Number(this.pool.totalWeight) / 2;
 
     const price = calcSpotPrice(
-      ztgBalance,
+      zulBalance,
       baseWeight,
       assetBalance,
       assetWeight,
@@ -438,7 +438,7 @@ class MarketStore {
     const prizePool = await this.store.sdk.api.query.tokens.totalIssuance(
       this.assets[0] as any,
     );
-    return new Decimal(prizePool.toString()).div(ZTG).toFixed(0);
+    return new Decimal(prizePool.toString()).div(ZUL).toFixed(0);
   }
 
   async calcWinnings(): Promise<Decimal> {
@@ -473,7 +473,7 @@ class MarketStore {
 
   async calcPrediction(): Promise<string> {
     const prices = await Promise.all(
-      this.marketOutcomes.map((outcome) => this.assetPriceInZTG(outcome.asset)),
+      this.marketOutcomes.map((outcome) => this.assetPriceInZUL(outcome.asset)),
     );
     if (this.type === "categorical") {
       let [highestPrice, highestPriceIndex] = [new Decimal(0), 0];

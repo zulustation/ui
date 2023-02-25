@@ -71,10 +71,10 @@ async function getSpotPrices(marketId: number, block?: string) {
 
   const spotPrices = new Map<string, Decimal>();
   const weights: { assetId: string; len: any }[] = Object.entries(pool.weights)
-    .filter((weight: any) => weight[0].toLowerCase() !== "ztg")
+    .filter((weight: any) => weight[0].toLowerCase() !== "zul")
     .map((weight: any) => ({ assetId: weight[0], len: weight[1] }));
 
-  const baseWeight = pool.weights["Ztg"];
+  const baseWeight = pool.weights["Zul"];
 
   const assets = weights.map((weight) => JSON.parse(weight.assetId));
 

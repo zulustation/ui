@@ -3,7 +3,7 @@ export const slidesData = [
     id: 1,
     title: {
       text: "Starship\nIn Outer Space?",
-      secondary: "WIN 1000 ZTG",
+      secondary: "WIN 1000 ZUL",
       styles:
         "text-white font-sans whitespace-pre font-extrabold text-6xl md:text-8xl mb-4",
       stylesSecondary:
@@ -53,7 +53,7 @@ export const slidesData = [
   // {
   //   id: 3,
   //   title: {
-  //     text: "ZTG is now traded on DEXs",
+  //     text: "ZUL is now traded on DEXs",
   //     styles: "text-white text-3xl sm:text-4xl md:text-6xl",
   //   },
   //   bg: "/carousel/slide-3.jpeg",

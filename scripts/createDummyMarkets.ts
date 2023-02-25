@@ -8,7 +8,7 @@ import {
 } from "@zeitgeistpm/sdk/dist/types";
 import dotenv from "dotenv";
 import { resolve } from "path";
-import { ZTG, DEFAULT_DEADLINES } from "../lib/constants";
+import { ZUL, DEFAULT_DEADLINES } from "../lib/constants";
 import { randomHexColor } from "../lib/util";
 import { capitalize } from "lodash";
 
@@ -48,7 +48,7 @@ program
   )
   .option(
     "-no, --num-outcomes [numOutcomes]",
-    "number of outcomes for each market, ztg excluded",
+    "number of outcomes for each market, zul excluded",
     "2",
   )
   .option(
@@ -178,9 +178,9 @@ const createCategoricalMarket = async (
     if (deployPool && creationType !== "advised") {
       let market = await sdk.models.fetchMarketData(marketId);
 
-      await market.buyCompleteSet(signer, 100 * ZTG);
+      await market.buyCompleteSet(signer, 100 * ZUL);
 
-      const baseWeight = (1 / numOutcomes) * 10 * ZTG;
+      const baseWeight = (1 / numOutcomes) * 10 * ZUL;
       let weights = [];
 
       for (let i = 0; i < numOutcomes; i++) {

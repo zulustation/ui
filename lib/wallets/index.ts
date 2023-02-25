@@ -10,7 +10,7 @@ import { SubWallet } from "./subwallet";
 import { Wallet, WalletAccount } from "./types";
 import { TalismanWallet } from "./talisman-wallet";
 import Store from "lib/stores/Store";
-import { ZTG } from "lib/constants";
+import { ZUL } from "lib/constants";
 
 const supportedWallets = [
   new PolkadotjsWallet(),
@@ -261,7 +261,7 @@ export default class Wallets {
         runInAction(() => {
           this.activeBalance = new Decimal(free.toString())
             .minus(miscFrozen.toString())
-            .div(ZTG);
+            .div(ZUL);
         });
       },
     );

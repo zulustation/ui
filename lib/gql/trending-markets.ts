@@ -2,7 +2,7 @@ import { MarketCreation } from "@zeitgeistpm/sdk/dist/types";
 import { IndexedMarketCardData } from "components/markets/market-card/index";
 import Decimal from "decimal.js";
 import { gql, GraphQLClient } from "graphql-request";
-import { DAY_SECONDS, ZTG } from "lib/constants";
+import { DAY_SECONDS, ZUL } from "lib/constants";
 import { MarketOutcomes, MarketOutcome } from "lib/types/markets";
 import { getCurrentPrediction } from "lib/util/assets";
 import { ScalarRangeType } from "@zeitgeistpm/sdk-next";
@@ -144,7 +144,7 @@ const getTrendingMarkets = async (
         creation: market.creation,
         img: market.img,
         prediction: prediction,
-        volume: Number(new Decimal(market.pool.volume).div(ZTG).toFixed(0)),
+        volume: Number(new Decimal(market.pool.volume).div(ZUL).toFixed(0)),
         baseAsset: market.pool.baseAsset,
         outcomes: marketCategories,
         pool: market.pool,

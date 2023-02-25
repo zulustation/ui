@@ -79,7 +79,7 @@ const DisputeButton = observer(
       <button
         onClick={handleClick}
         disabled={disputeDisabled}
-        className="text-mariner font-semibold text-ztg-14-120"
+        className="text-mariner font-semibold text-zul-14-120"
       >
         Dispute Outcome
       </button>

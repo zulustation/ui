@@ -1,4 +1,4 @@
-import { ZTG } from "@zeitgeistpm/sdk-next";
+import { ZUL } from "@zeitgeistpm/sdk-next";
 import { MarketCreation } from "@zeitgeistpm/sdk/dist/types";
 import { IndexedMarketCardData } from "components/markets/market-card/index";
 import Decimal from "decimal.js";
@@ -108,7 +108,7 @@ const getNewestMarkets = async (
         question: market.question,
         creation: market.creation,
         prediction: prediction,
-        volume: new Decimal(market.pool.volume).div(ZTG).toNumber(),
+        volume: new Decimal(market.pool.volume).div(ZUL).toNumber(),
         baseAsset: market.pool.baseAsset,
         outcomes: marketCategories,
         pool: market.pool,
